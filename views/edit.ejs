@@ -1,0 +1,60 @@
+<% layout('layouts/boilerplate') %>
+
+
+
+    <div class="row">
+        <h1 class="text-center">Edit Waifu</h1>
+        <div class="col-6 offset-md-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <form action="/waifulocations/<%=data._id %>?_method=PUT" method="post" novalidate
+                        class="validated-form" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label class="form-label" for="name">Name</label>
+                            <input class="form-control" type="text" name="waifulocation[name]" id="name"
+                                placeholder="Waifu Name" value="<%= data.name %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="location">Location</label>
+                            <input class="form-control" type="text" name="waifulocation[location]" id="location"
+                                placeholder="Location You Want" value="<%= data.location %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="age">Enter Waifu Age</label>
+                            <input class="form-control" type="number" name="waifulocation[age]" id="age"
+                                placeholder="Enter Waifu Age" value="<%= data.age %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="description">Description</label>
+                            <textarea class="form-control" type="text" name="waifulocation[description]"
+                                id="description" placeholder="Enter Description"
+                                required><%= data.description %></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="">Add more images</label>
+                            <div class="input-group custom-file mb-3">
+                                <input type="file" class="form-control" id="images" name="image" multiple>
+                                <!-- <label class="input-group-text custom-file-label" for="images">Image(s)</label> -->
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <% data.images.forEach(function(img, i) {%>
+
+                                <img crossorigin="anonymous" src="<%= img.thumbnail %>" class="img-thumbnail" alt="">
+                                <div class="form-check-inline">
+                                    <input type="checkbox" id="image-<%= i %>" name="deleteImages[]"
+                                        value="<%= img.filename  %>">
+                                </div>
+                                <label for="image-<%= i %>">Delete image</label>
+                                <% }) %>
+                        </div>
+                        <div class="d-grid d-2 mb-3">
+                            <button class="btn btn-info">Save</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-secondary mt-4 btn-lg" href="/waifulocations">Back</a>

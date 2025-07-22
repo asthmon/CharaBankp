@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate') %>
+    <div class="container justify-content-center align-items-center mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+                <div class="card shadow">
+                    <img crossorigin="anonymous" class="card-img-top"
+                        src="https://media1.tenor.com/m/JhKe3dz8Hx8AAAAC/songoku.gif" alt="">
+                    <div class="card-body">
+                        <h5>Register / Sign up</h5>
+                        <form action="/register" method="post" class="validated-form" novalidate>
+                            <div class="mb-3">
+                                <label class="form-label" for="email">Email: </label>
+                                <input class="form-control" type="email" name="email" id="email"
+                                    placeholder="example@gmail.com" required autofocus>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="username">Username: </label>
+                                <input class="form-control" type="text" name="username" id="username"
+                                    placeholder="Username" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="password">Password: </label>
+                                <input class="form-control" type="password" name="password" id="password"
+                                    placeholder="Enter a password" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <button class="btn mt-3 btn-success">Register</button>
+                            <div class="d-grid gap-2">
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-info btn-lg mt-4" href="/waifulocations">Back</a>

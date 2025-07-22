@@ -1,0 +1,24 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">CharaBank</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">Homepage</a>
+                <a class="nav-link" href="/waifulocations">All List</a>
+                <a class="nav-link" href="/waifulocations/new">Add New</a>
+            </div>
+            <% if(!signedUser) {%>
+                <div class="navbar-nav ms-auto">
+                    <a href="/login" class="nav-link">Log In</a>
+                    <a href="/register" class="nav-link">Register/Sign Up</a>
+                    <% } else { %>
+                        <a href="/logout" class="nav-link">Log Out</a>
+                        <% } %>
+                </div>
+        </div>
+    </div>
+</nav>

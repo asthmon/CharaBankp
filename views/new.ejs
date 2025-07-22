@@ -1,0 +1,49 @@
+<% layout('layouts/boilerplate') %>
+
+    <div class="row">
+        <h1 class="text-center">Add New Waifu</h1>
+        <div class="col-6 offset-md-3">
+            <div class="card shadow">
+                <div class="card-body">
+
+
+                    <form action="/waifulocations" method="post" novalidate class="validated-form"
+                        enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label class="form-label" for="name">Name</label>
+                            <input class="form-control" type="text" name="waifulocation[name]" id="name"
+                                placeholder="Waifu Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="location">Location</label>
+                            <input class="form-control" type="text" name="waifulocation[location]" id="location"
+                                placeholder="Location You Want" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="age">Enter Waifu Age</label>
+                            <input class="form-control" type="number" name="waifulocation[age]" id="age"
+                                placeholder="Enter Waifu Age" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="description">Description</label>
+                            <textarea class="form-control" type="text" name="waifulocation[description]"
+                                id="description" placeholder="Enter Description" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="">Upload Images</label>
+                            <div class="input-group custom-file mb-3">
+                                <input type="file" class="form-control" id="images" name="image" multiple>
+                                <!-- <label class="input-group-text custom-file-label" for="images">Image(s)</label> -->
+                            </div>
+                        </div>
+                        <div class="d-grid gap2">
+                            <button class="btn btn-success">Add Waifu</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <a class="btn btn-secondary" href="/waifulocations" style="text-decoration: none;">Back</a>
+        </div>
+
+    </div>
