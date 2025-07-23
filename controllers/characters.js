@@ -4,7 +4,7 @@ const { cloudinary } = require("../cloudinary");
 
 module.exports.index = async (req, res, next) => {
     const waifulocations = await Waifulocation.find({})
-    res.render('waifuLocations', { datas: waifulocations })
+    res.render('../views/waifuLocations', { datas: waifulocations })
 }
 
 module.exports.renderNewForm = (req, res) => {
