@@ -54,14 +54,19 @@ app.set('query parser', 'extended');
 
 
 //Set UP use, Set and Directory, Path
-app.engine('ejs', ejsMate)
-app.set('view engine', 'ejs')
+app.engine('ejs', ejsMate);
+app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(sanitizeV5({ replaceWith: '_' }));
 
+app.set("views", __dirname + "/views");
+
+app.use(express.static(__dirname + "public"))
+
+
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'));
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 const secret = process.env.SECRET || 'thisisheryza';
 
