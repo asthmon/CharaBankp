@@ -1,0 +1,36 @@
+<% layout('layouts/boilerplate') %>
+
+    <h1>All Data List</h1>
+    <% for (let waifu of datas) { %>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <%if(waifu.images.length) {%>
+                        <img crossorigin="anonymous" class="img-fluid" src="<%= waifu.images[0].url %>" alt="">
+                        <% } else { %>
+                            <img crossorigin="anonymous" class="img-fluid"
+                                src="https://res.cloudinary.com/drltvwfnh/image/upload/v1753012126/CharaBank/gslgid0ehpvtmn12ylqq.gif"
+                                alt="">
+                            <% } %>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= waifu.name %>
+                        </h5>
+                        <p class="card-text">
+                            <%= waifu.description %>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%= waifu.location %>
+                            </small>
+                        </p>
+                        <a class="btn btn-primary" href="/waifulocations/<%= waifu._id  %>">View <%= waifu.name %>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
